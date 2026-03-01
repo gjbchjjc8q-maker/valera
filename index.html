@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>соси хуй</title>
+    <title>Кто Валера?</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000;
-            color: white; 
             font-family: Arial, sans-serif;
-            font-size: 10vw; 
-            font-weight: bold;
             text-align: center;
+            margin-top: 50px;
+        }
+        .option {
+            font-size: 24px;
+            margin: 10px 0;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .option:hover {
+            color: red;
+        }
+        .hidden-text {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div>валера хуесос</div>
+    <h1>Кто Валера?</h1>
+    <div class="option" onmouseover="changeText(this)" onmouseout="resetText(this)">Крутой</div>
+    <div class="option" onmouseover="changeText(this)" onmouseout="resetText(this)">Классный</div>
+    <div class="option" onmouseover="changeText(this)" onmouseout="resetText(this)">Пиздатый</div>
+    <div class="option" onmouseover="changeText(this)" onmouseout="resetText(this)">Ахуенный</div>
+
+    <script>
+        function changeText(element) {
+            element.innerHTML = "Хуесос";
+        }
+
+        function resetText(element) {
+            // возвращаем оригинальное значение
+            const options = {
+                'Крутой': 'Крутой',
+                'Классный': 'Классный',
+                'Пиздатый': 'Пиздатый',
+                'Ахуенный': 'Ахуенный',
+            };
+            element.innerHTML = options[element.innerHTML];
+        }
+    </script>
 </body>
 </html>
